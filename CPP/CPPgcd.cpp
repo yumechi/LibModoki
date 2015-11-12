@@ -36,9 +36,9 @@ int gcd(int a, int b) {
     return a;
 }
 
-int arrgcd(int *x) {
+int arrgcd(int *x, int length) {
     int t = x[0];
-    FOR(i, 1, ALEN(x)) t = gcd(t, x[i]);
+    FOR(i, 1, length) t = gcd(t, x[i]);
     return t;
 }
 
@@ -67,9 +67,9 @@ void testMethod() {
     // arr test
     {
         int x[4] = {2, 3, 4, 5};
-        DEBUG(arrgcd(x));
+        DEBUG(arrgcd(x, ALEN(x)));
         int y[4] = {4, 8, 12, 16};
-        DEBUG(arrgcd(y));
+        DEBUG(arrgcd(y, ALEN(y)));
     }
 
     // vector test
