@@ -24,4 +24,11 @@ def is_prime(n):
         i += 1
     return True
 
-print(prime_counter(30))
+def test():
+    print(prime_counter(30))
+    print(prime_counter(2014))
+    print(prime_factorization(5030))
+    print(is_prime(3033))
+    print(is_prime(7))
+
+test()

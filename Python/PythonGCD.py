@@ -24,7 +24,10 @@ def arrlcm(a):
         ret = lcm(ret, i)
     return ret
 
-print(arrgcd([3, 6, 9]))
-print(arrgcd([5, 8, 10]))
-print(arrlcm([3, 6, 9]))
-print(arrlcm([5, 8, 10]))
+def test():
+    print(arrgcd([3, 6, 9]))
+    print(arrgcd([5, 8, 10]))
+    print(arrlcm([3, 6, 9]))
+    print(arrlcm([5, 8, 10]))
+
+test()
