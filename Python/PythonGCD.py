@@ -16,7 +16,7 @@ def lcm(a, b):
     if a == 0 or b == 0:
         print("Error")
         return 0
-    return int(a * b / gcd(a, b))
+    return int(a * b // gcd(a, b))
 
 def arrlcm(a):
     ret = a[0]
