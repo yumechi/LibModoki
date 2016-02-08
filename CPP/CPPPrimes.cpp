@@ -26,47 +26,47 @@ using namespace std;
 #define MOD 1000000007
 
 vector<int> prime_factorization(int n) {
-    vector<int> ret;
-    FOR(i, 2, (int)(sqrt(n) + 2)) {
-        while(n % i == 0) {
-            n /= i;
-            ret.pb(i);
-        }
-    }
-    if(n > 1) ret.pb(n);
-    return ret;
+	vector<int> ret;
+	FOR(i, 2, (int)(sqrt(n) + 2)) {
+		while(n % i == 0) {
+			n /= i;
+			ret.pb(i);
+		}
+	}
+	if(n > 1) ret.pb(n);
+	return ret;
 }
 
 map<int, int> prime_counter(int n) {
-    map<int, int> ret;
-    FOR(i, 2, (int)(sqrt(n) + 2)) {
-        while(n % i == 0) {
-            n /= i;
-            if(ret.find(i) == ret.end()) {
-                ret[i] = 1;
-            } else {
-                ret[i]++;
-            }
-        }
-    }
-    if(n > 1) ret[n] = 1;
-    return ret;
+map<int, int> ret;
+	FOR(i, 2, (int)(sqrt(n) + 2)) {
+		while(n % i == 0) {
+			n /= i;
+			if(ret.find(i) == ret.end()) {
+				ret[i] = 1;
+			} else {
+				ret[i]++;
+			}
+		}
+	}
+	if(n > 1) ret[n] = 1;
+	return ret;
 }
 
 int main(){
-  cin.tie(0);
-  ios::sync_with_stdio(false);
-  cout.precision(16);
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	cout.precision(16);
 
-  map<int, int> pcmap = prime_counter(1341398);
-  for(auto elem : pcmap) {
-      cout << "num: " << elem.first << "  second: " << elem.second << endl;
-  }
+	map<int, int> pcmap = prime_counter(1341398);
+	for(auto elem : pcmap) {
+		cout << "num: " << elem.first << "  second: " << elem.second << endl;
+	}
 
-  vector<int> pflist = prime_factorization(20101010);
-  for(auto elem : pflist) {
-      cout << "num : " << elem << endl;
-  }
+	vector<int> pflist = prime_factorization(20101010);
+	for(auto elem : pflist) {
+		cout << "num : " << elem << endl;
+	}
 
-  return 0;
+	return 0;
 }

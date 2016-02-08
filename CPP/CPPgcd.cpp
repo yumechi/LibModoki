@@ -84,10 +84,10 @@ void testMethod() {
 }
 
 int main(){
-  cin.tie(0);
-  ios::sync_with_stdio(false);
-  cout.precision(16);
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	cout.precision(16);
 
-  testMethod();
-  return 0;
+	testMethod();
+	return 0;
 }

@@ -26,8 +26,8 @@ using namespace std;
 #define MOD 1000000007
 
 int main(){
-  cin.tie(0);
-  ios::sync_with_stdio(false);
-  cout.precision(16);
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	cout.precision(16);
 
 }
