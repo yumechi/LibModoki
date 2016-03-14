@@ -53,11 +53,7 @@ map<int, int> ret;
 	return ret;
 }
 
-int main(){
-	cin.tie(0);
-	ios::sync_with_stdio(false);
-	cout.precision(16);
-
+void test() {
 	map<int, int> pcmap = prime_counter(1341398);
 	for(auto elem : pcmap) {
 		cout << "num: " << elem.first << "  second: " << elem.second << endl;
@@ -67,6 +63,13 @@ int main(){
 	for(auto elem : pflist) {
 		cout << "num : " << elem << endl;
 	}
+}
 
+int main(){
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	cout.precision(16);
+
+	test();
 	return 0;
 }
