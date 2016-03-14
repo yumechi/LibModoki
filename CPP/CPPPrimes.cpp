@@ -53,16 +53,55 @@ map<int, int> ret;
 	return ret;
 }
 
-void test() {
+vector<int> getPrimes(int n) {
+	vector<int> ret;
+
+	// errro check
+	if(n <= 0) {
+		cout << "can use this method negative number: getPrime " << n << endl;
+		return ret;
+	}
+
+	FOR(i, 2, n) {
+		bool flag = true;
+		for(auto prime : ret) {
+			if(i % prime == 0) {
+				flag = false;
+				break;
+			}
+		}
+
+		if(flag) ret.pb(i);
+	}
+
+	return ret;
+}
+
+void counterTest() {
 	map<int, int> pcmap = prime_counter(1341398);
 	for(auto elem : pcmap) {
 		cout << "num: " << elem.first << "  second: " << elem.second << endl;
 	}
+}
 
+void factorizationTest() {
 	vector<int> pflist = prime_factorization(20101010);
 	for(auto elem : pflist) {
 		cout << "num : " << elem << endl;
 	}
+}
+
+void primesTest() {
+	vector<int> primeList = getPrimes(105);
+	for(auto elem : primeList) {
+		cout << "num : " << elem << endl;
+	}
+}
+
+void test() {
+	counterTest();
+	factorizationTest();
+	primesTest();
 }
 
 int main(){
