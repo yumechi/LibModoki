@@ -9,6 +9,7 @@
 #include <string>
 #include <algorithm>
 #include <functional>
+
 using namespace std;
 #define FOR(i,a,b) for (int i=(a);i<(b);i++)
 #define RFOR(i,a,b) for (int i=(b)-1;i>=(a);i--)
@@ -38,7 +39,7 @@ vector<int> prime_factorization(int n) {
 }
 
 map<int, int> prime_counter(int n) {
-map<int, int> ret;
+	map<int, int> ret;
 	FOR(i, 2, (int)(sqrt(n) + 2)) {
 		while(n % i == 0) {
 			n /= i;
@@ -77,6 +78,26 @@ vector<int> getPrimes(int n) {
 	return ret;
 }
 
+int* getEratosthenes(int *ret, int n) {
+	REP(i, n) ret[i] = 1;
+
+	ret[0] = ret[1] = 0;
+	int range = sqrt(n) + 1;
+	FOR(i, 2, range) {
+		if(ret[i] == 1) {
+			for(int j = i * 2; j < n; j += i) {
+				ret[j] = 0;
+			}
+		}
+	}
+
+	return ret;
+}
+
+/********************
+ **  TEST METHOD   **
+*********************/
+
 void counterTest() {
 	map<int, int> pcmap = prime_counter(1341398);
 	for(auto elem : pcmap) {
@@ -98,11 +119,26 @@ void primesTest() {
 	}
 }
 
-void test() {
-	counterTest();
-	factorizationTest();
-	primesTest();
+void eratosthenesTest() {
+	int num = 1004;
+	int arr[num];
+	int *primeList = getEratosthenes(arr, num);
+	REP(i, num) {
+		if(primeList[i] == 1) cout << "Primes: " << i << endl;
+	}
 }
+
+void test() {
+	// counterTest();
+	// factorizationTest();
+	// primesTest();
+	eratosthenesTest();
+}
+
+
+/********************
+ **  MAIN METHOD   **
+*********************/
 
 int main(){
 	cin.tie(0);
