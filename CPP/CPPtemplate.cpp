@@ -21,6 +21,7 @@ using namespace std;
 #define pb push_back
 #define PB push_back
 #define DEBUG(x) cout<<#x<<": "<<x<<endl
+#define DDEBUG(x,y) cout<<#x<<": "<<x<<", "<<#y<<": "<<y<<endl
 #define ll long long
 #define ull unsigned long long
 #define MOD 1000000007
