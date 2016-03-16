@@ -15,13 +15,14 @@ using namespace std;
 #define RFOR(i,a,b) for (int i=(b)-1;i>=(a);i--)
 #define REP(i,n) for (int i=0;i<(n);i++)
 #define RREP(i,n) for (int i=(n)-1;i>=0;i--)
-#define INF 1<<30
+#define INF 1<<29
 #define ALEN(ARR) (sizeof(ARR) / sizeof((ARR)[0]))
 #define MP make_pair
 #define mp make_pair
 #define pb push_back
 #define PB push_back
 #define DEBUG(x) cout<<#x<<": "<<x<<endl
+#define DDEBUG(x,y) cout<<#x<<": "<<x<<", "<<#y<<": "<<y<<endl
 #define ll long long
 #define ull unsigned long long
 #define MOD 1000000007
