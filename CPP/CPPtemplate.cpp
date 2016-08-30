@@ -31,5 +31,7 @@ int main(){
 	ios::sync_with_stdio(false);
 	cout.precision(16);
 
+#if DEBUG
 	cout << "** RESULT **" << endl; // debug
+#endif
 }
