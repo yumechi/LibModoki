@@ -34,4 +34,6 @@ int main(){
 #if DEBUG
 	cout << "** RESULT **" << endl; // debug
 #endif
+	
+	return 0;
 }
