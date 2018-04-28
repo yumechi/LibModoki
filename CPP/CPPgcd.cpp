@@ -9,7 +9,10 @@
 #include <string>
 #include <algorithm>
 #include <functional>
+#include <iterator>
+
 using namespace std;
+
 #define FOR(i,a,b) for (int i=(a);i<(b);i++)
 #define RFOR(i,a,b) for (int i=(b)-1;i>=(a);i--)
 #define REP(i,n) for (int i=0;i<(n);i++)
@@ -20,11 +23,29 @@ using namespace std;
 #define mp make_pair
 #define pb push_back
 #define PB push_back
+
+#if DEBUG
 #define _DEBUG(x) cout<<#x<<": "<<x<<endl
 #define _DDEBUG(x,y) cout<<#x<<": "<<x<<", "<<#y<<": "<<y<<endl
+#else
+#define _DEBUG(x) ;
+#define _DDEBUG(x,y) ;
+#endif
+
 #define ll long long
 #define ull unsigned long long
 #define MOD 1000000007
+
+/** FOR VECTOR DEBUG */
+template <typename T>
+ostream& operator<< (ostream& out, const vector<T>& v) {
+    if ( !v.empty() ) {
+        out << '[';
+        copy (v.begin(), v.end(), ostream_iterator<T>(out, ", "));
+        out << "\b\b]";
+    }
+    return out;
+}
 
 // refer: http://judge.u-aizu.ac.jp/onlinejudge/commentary.jsp?id=ALDS1_1_B
 int gcd(int a, int b) {
@@ -60,27 +81,27 @@ ll llgcd(ll a, ll b) {
 }
 
 void testMethod() {
-    DEBUG(gcd(3, 5));
-    DEBUG(gcd(15, 55));
-    DEBUG(gcd(4, 8));
-    DEBUG(llgcd(1234567890123456, 1000000007));
+    _DEBUG(gcd(3, 5));
+    _DEBUG(gcd(15, 55));
+    _DEBUG(gcd(4, 8));
+    _DEBUG(llgcd(1234567890123456, 1000000007));
 
     // arr test
     {
         int x[4] = {2, 3, 4, 5};
-        DEBUG(arrgcd(x, ALEN(x)));
+        _DEBUG(arrgcd(x, ALEN(x)));
         int y[4] = {4, 8, 12, 16};
-        DEBUG(arrgcd(y, ALEN(y)));
+        _DEBUG(arrgcd(y, ALEN(y)));
     }
 
     // vector test
     {
         int x[4] = {3, 5, 7, 9};
         vector<int> vx(x, x+ALEN(x));
-        DEBUG(vecgcd(vx));
+        _DEBUG(vecgcd(vx));
         int y[5] = {5, 10, 15, 20, 25};
         vector<int> vy(y, y+ALEN(y));
-        DEBUG(vecgcd(vy));
+        _DEBUG(vecgcd(vy));
     }
 }
 

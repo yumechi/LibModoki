@@ -9,8 +9,10 @@
 #include <string>
 #include <algorithm>
 #include <functional>
+#include <iterator>
 
 using namespace std;
+
 #define FOR(i,a,b) for (int i=(a);i<(b);i++)
 #define RFOR(i,a,b) for (int i=(b)-1;i>=(a);i--)
 #define REP(i,n) for (int i=0;i<(n);i++)
@@ -21,11 +23,29 @@ using namespace std;
 #define mp make_pair
 #define pb push_back
 #define PB push_back
+
+#if DEBUG
 #define _DEBUG(x) cout<<#x<<": "<<x<<endl
 #define _DDEBUG(x,y) cout<<#x<<": "<<x<<", "<<#y<<": "<<y<<endl
+#else
+#define _DEBUG(x) ;
+#define _DDEBUG(x,y) ;
+#endif
+
 #define ll long long
 #define ull unsigned long long
 #define MOD 1000000007
+
+/** FOR VECTOR DEBUG */
+template <typename T>
+ostream& operator<< (ostream& out, const vector<T>& v) {
+    if ( !v.empty() ) {
+        out << '[';
+        copy (v.begin(), v.end(), ostream_iterator<T>(out, ", "));
+        out << "\b\b]";
+    }
+    return out;
+}
 
 vector<int> prime_factorization(int n) {
 	vector<int> ret;
