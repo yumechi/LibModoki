@@ -1,3 +1,7 @@
+#if DEBUG
+#define _GLIBCXX_DEBUG
+#endif
+
 #include <iostream>
 #include <cstdio>
 #include <cmath>
